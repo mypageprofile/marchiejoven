@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"> Home</a></li>
+                <li><a href="#about"> About</a></li>
+                <li><a href="#certificates"> Certificates</a></li>
+                <li><a href="#resume"> Resume</a></li>
+                <li><a href="#services"> Services</a></li>
+                <li><a href="#works"> Works</a></li>
+                <li><a href="#contact"> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Hey, I'm Marchie</h1>
+            <p>Discover my work and services</p>
+        </section>
+        
+        <section id="empty">
+            <h1></h1>
+            <p></p>
+        </section>
+
+        <section id="about">
+            <h2>More Info About Me</h2>
+            <div class="about-container">
+                <img src="img/profile.jpg" alt="Profile Image" class="profile-image">
+                <div class="about-text">
+					<br>
+                    <p class="justified-text">I'm Marchie L. Joven, 31 years old. A dedicated and driven professional, known for my strong work ethic and remarkable ability to work independently. With a strong preference for remote work, I thrive in environments where I can leverage my self-motivation and discipline to achieve exceptional results. Eager to embrace the flexibility of working from home, I seamlessly balance productivity and focus, often going above and beyond to meet and exceed expectations. My friendly demeanor makes me approachable and easy to collaborate with, while my serious and focused nature during work phases ensures tasks are completed efficiently and to the highest standard. Whether tackling complex projects or managing daily responsibilities, I consistently demonstrate a strong work ethic and a commitment to excellence, making me a valuable asset to any remote team.</p>
+					<br>
+					<div class="personal-info">
+						<div class="info-left">
+							<p><i class="fas fa-user"></i>   Marchie L. Joven</p>
+							<p><i class="fas fa-envelope"></i>   marchiejoven@gmail.com</p>
+						</div>
+						<div class="info-right">
+							<p><i class="fas fa-map-marker-alt"></i>   Davao City, Philippines</p>
+							<p><i class="fas fa-briefcase"></i>   Freelance</p>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+		
+		<section id="empty3">
+            <h1></h1>
+            <p></p>
+        </section>
+		
+		<section id="skills">
+		<h2>My Skills and Competencies</h2>
+		<div class="skills-container">
+			<div class="skill">
+				<h3>SQL</h3>
+				<div class="skill-line">
+					<div class="progress" style="width: 90%;"></div>
+					<span>90%</span>
+				</div>
+			</div>
+			<div class="skill">
+				<h3>C#.NET</h3>
+				<div class="skill-line">
+					<div class="progress" style="width: 85%;"></div>
+					<span>85%</span>
+				</div>
+			</div>
+			<div class="skill">
+				<h3>HTML/CSS</h3>
+				<div class="skill-line">
+					<div class="progress" style="width: 80%;"></div>
+					<span>80%</span>
+				</div>
+			</div>
+			<div class="skill">
+				<h3>Application Administration</h3>
+				<div class="skill-line">
+					<div class="progress" style="width: 75%;"></div>
+					<span>75%</span>
+				</div>
+			</div>
+		</div>
+		</section>
+
+        <section id="certificates">
+            <h2>Certificates</h2>
+            <div class="certificates-container">
+                <div class="certificate">
+                    <img src="C:\Users\Administrator\Documents\marchie portfolio\backup\img\cert1.jpg" alt="Certificate 1" class="responsive-image">
+                    <h3>Certificate 1</h3>
+                    <p>Description of Certificate 1...</p>
+                </div>
+                <div class="certificate">
+                    <img src="C:\Users\Administrator\Documents\marchie portfolio\backup\img\cert2.jpg" alt="Certificate 2" class="responsive-image">
+                    <h3>Certificate 2</h3>
+                    <p>Description of Certificate 2...</p>
+                </div>
+                <div class="certificate">
+                    <img src="C:\Users\Administrator\Documents\marchie portfolio\backup\img\cert3.jpg" alt="Certificate 3" class="responsive-image">
+                    <h3>Certificate 3</h3>
+                    <p>Description of Certificate 3...</p>
+                </div>
+            </div>
+        </section>
+
+<section id="resume">
+    <h2>My Experience and Education</h2>
+    <div class="toggle-button" onclick="toggleSection()">
+        <div id="experienceBtn" class="button active"><i class="fas fa-briefcase"></i> Experience</div>
+        <div id="educationBtn" class="button"><i class="fas fa-graduation-cap"></i> Education</div>
+    </div>
+    <div id="experience" class="resume-content">
+        <h3><i class="fas fa-briefcase"></i></h3>
+        <p>Details about your work experience...</p>
+        <p>Job 1: Front-end Developer at XYZ Corp</p>
+        <p>Job 2: Web Developer at ABC Inc</p>
+        <p>Job 3: Software Engineer at DEF Ltd</p>
+    </div>
+    <div id="education" class="resume-content" style="display: none;">
+        <h3><i class="fas fa-graduation-cap"></i></h3>
+        <p>Details about your education...</p>
+        <p>Bachelor's Degree in Computer Science from University A</p>
+        <p>Master's Degree in Information Technology from University B</p>
+        <p>Certifications in Web Development and UX/UI Design</p>
+    </div>
+</section>
+
+
+
+        <section id="services">
+            <h2>My Services</h2>
+            <div class="project">
+                <img src="C:\Users\Administrator\Documents\marchie portfolio\backup\img\book.jpeg" alt="Project 1" class="responsive-image">
+                <h3>Book Keeping</h3>
+                <p>A brief description of the project...</p>
+            </div>
+            <div class="project">
+                <img src="C:\Users\Administrator\Documents\marchie portfolio\backup\img\data.jpg" class="responsive-image">
+                <h3>Data Entry</h3>
+                <p>A brief description of the project...</p>
+            </div>
+            <div class="project">
+                <img src="C:\Users\Administrator\Documents\marchie portfolio\backup\img\digital.jpg" class="responsive-image">
+                <h3>Digital Marketing</h3>
+                <p>A brief description of the project...</p>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2>Works</h2>
+            <p>I am a passionate developer with experience in creating responsive and user-friendly websites.</p>
+        </section>
+		
+		<section id="empty2">
+            <h1></h1>
+        </section>
+		
+		<section id="available">
+			<h1>Let's Work Together!</h1>
+			<p>I am available for freelance projects.</p>
+			<button class="hire-me-button"><i class="fas fa-handshake"></i> Hire Me</button>
+		</section>
+
+		<section id="contact">
+			<h2>Get In Touch</h2>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" required></textarea>
+				<button type="submit">Send</button>
+			</form>
+			<p><br></p>
+			<div class="social-media">
+				<a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+				<a href="https://github.com/your-github-profile" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+				<a href="https://www.instagram.com/your-instagram-profile" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+				<a href="https://www.facebook.com/your-facebook-profile" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+				<a href="https://twitter.com/your-twitter-profile" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+			</div>
+		</section>
+		
+		<section id="empty2">
+            <h1></h1>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Marchie L. Joven. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,614 @@
+/* Add custom fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Basic reset and styling */
+body, h2, h3, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: 'Brush Script MT', cursive;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 2;
+    color: #333;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease;
+}
+
+body:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+header {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Adds the glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For older versions of Safari */
+	font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+    font-weight: bold; /* Make the font bold */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #333; /* White text color */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+	
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background on hover */
+}
+
+
+
+.justified-text {
+    text-align: justify;
+}
+
+.personal-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
+.info-left, .info-right {
+    width: 45%;
+}
+
+.info-left p, .info-right p {
+    margin: 0.5em 0;
+    text-align: justify;
+}
+
+main {
+    max-width: 1100px;
+    margin: 3rem auto;
+}
+
+section {
+    padding-top: 4rem; /* Adjust top padding */
+    padding-right: 3rem; /* Adjust right padding */
+    padding-bottom: 2rem; /* Adjust bottom padding */
+    padding-left: 3rem; /* Adjust left padding */
+    background: #fff;
+    position: relative;
+}
+
+section h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%; /* Adjust to center relative to h2 */
+    transform: translateX(-50%); /* Center the pseudo-element */
+    width: 20%; /* Adjust width as needed */
+    height: 1px;
+    background-color: #333;
+}
+
+section p {
+    margin-top: 1rem;
+}
+
+#home {
+    text-align: center;
+    padding: 2rem;
+    background: #eaeaea;
+    border-radius: 8px;
+}
+
+#home h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#certificates h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+
+#about h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+
+#resume h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 3rem;
+}
+
+#resume {
+    margin-bottom: 20rem;
+}
+
+#services h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 1rem;
+}
+
+#works h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 1rem;
+}
+
+#certificates, #about, #resume, #services, #works {
+    text-align: center;
+}
+
+.certificates-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#certificates .certificate {
+    flex: 0 1 calc(30% - 1rem);
+    text-align: center;
+}
+
+#certificates .certificate img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+#certificates .certificate img:hover {
+    transform: scale(1.05);
+}
+
+#certificates .certificate h3 {
+    margin-top: 0.5rem;
+}
+
+
+#services .project {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#services .project img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+#services .project img:hover {
+    transform: scale(1.05);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #555;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    #services .project img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #certificates .certificate {
+        flex: 0 1 calc(50% - 1rem);
+    }
+	
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill {
+        width: 90%;
+    }
+	
+	#available {
+        padding: 2rem;
+    }
+
+    #available h1 {
+        font-size: 2rem;
+    }
+	
+	#contact {
+        padding: 2rem;
+    }
+
+    #contact h2 {
+        font-size: 2rem;
+    }
+	
+}
+
+.buttons {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #FF5722;
+}
+
+.resume-content {
+    display: none;
+}
+
+#experience {
+    display: block;
+}
+
+#education {
+    display: none;
+}
+
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.profile-image {
+    width: 350px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+}
+
+#about p {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+#empty {
+    background-color: transparent;
+    padding: 5rem;
+    margin: 5rem;
+}
+
+#empty2 {
+    background-color: transparent;
+    margin: 3rem;
+}
+
+#empty3 {
+    background-color: #fff;
+}
+
+#home {
+    background-color: transparent;
+}
+
+#home h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #eeeeee;
+}
+
+#home p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #cccccc;
+}
+
+/* Center align h1 and social media links */
+#contact {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center; /* Center align content */
+}
+
+#contact h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact label {
+    display: block;
+	font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contact button {
+	font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+
+	height: 8%;
+	width: 20%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #555;
+}
+
+.social-media {
+    margin-top: 1rem;
+    text-align: center; /* Center align social media links */
+}
+
+.social-media a {
+    display: inline-block;
+    margin-right: 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+	font-size: 1rem;
+}
+
+.social-media a:hover {
+    color: #007bff; /* Adjust hover color as needed */
+}
+
+
+#skills {
+    padding: 2rem; /* Adjust padding as needed */
+    text-align: center;
+    background: #fff;
+}
+
+#skills h2 {
+    margin-bottom: 1rem; /* Adjust margin-bottom for spacing consistency */
+    font-size: 2rem; /* Match font size with other h2 headings */
+    font-weight: 100; /* Ensure consistent font weight */
+    color: #333; /* Match text color with other h2 headings */
+    position: relative;
+}
+
+#skills h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20%; /* Adjust width of underline */
+    height: 1px;
+    background-color: #333; /* Match underline color */
+}
+
+
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.skill {
+    flex: 0 1 45%;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.skill h3 {
+    display: inline-block;
+    margin-right: 1rem;
+	margin-top: 1rem;
+    font-size: 1rem;
+	font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+}
+
+.skill-line {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 2px;
+    background: #ccc;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.progress {
+    height: 2px;
+    background: #298c2d;
+    position: absolute;
+}
+
+.skill-line span {
+    margin-left: 28rem;
+	margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Available section styles */
+#available {
+    padding: 0.5rem;
+    text-align: center;
+    background: transparent; /* Semi-transparent background */
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+#available h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: -1.2rem;
+}
+
+#available p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+/* Hire Me button styles */
+.hire-me-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.hire-me-button i {
+    margin-right: 0.5rem;
+}
+
+.hire-me-button:hover {
+    background: #555;
+}
+
+
+/* Toggle button styles */
+.toggle-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.toggle-button .button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 500px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: -2px; /* Remove gap between buttons */
+}
+
+.toggle-button .button:first-child {
+    border-radius: 5px 0 0 5px; /* Rounded left corner for first button */
+}
+
+.toggle-button .button:last-child {
+    border-radius: 0 5px 5px 0; /* Rounded right corner for last button */
+}
+
+.toggle-button .button:hover {
+    background-color: #e0e0e0;
+}
+
+.toggle-button .button.active {
+    background-color: #66BB6A; /* Active button color */
+    color: white;
+}
