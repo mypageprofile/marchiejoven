@@ -80,9 +80,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(skillsSection);
 });
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
 	// Initialize Web3Forms
 	const form = document.getElementById('contact-form');
 	new Web3Forms('your-form-id', form);
 });
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting traditionally
+
+        const formData = new FormData(contactForm);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: JSON.stringify(formDataObject),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Message sent successfully!'); // Replace with your preferred success message method
+                contactForm.reset(); // Optional: Clear the form fields
+                window.location.href = '/'; // Redirect to the home page
+            } else {
+                throw new Error('Failed to send message.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was a problem sending your message. Please try again later.');
+        });
+    });
+});
+
