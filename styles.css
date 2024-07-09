@@ -3,18 +3,6 @@
 /* Add custom fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Ensure full height of the viewport */
-}
-
 /* Basic reset and styling */
 body, h2, h3, p, ul, li, form, input, textarea, button {
     margin: 0;
@@ -36,7 +24,6 @@ body {
     position: relative;
     overflow-x: hidden;
     transition: background-color 0.3s ease;
-	min-height: 100vh;
 }
 
 body:hover {
@@ -49,7 +36,7 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px); /* Adds the glass blur effect */
     -webkit-backdrop-filter: blur(10px); /* For older versions of Safari */
-	font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
     font-weight: bold; /* Make the font bold */
 }
 
@@ -100,9 +87,6 @@ nav ul li a:hover {
 main {
     max-width: 1300px;
     margin: 5rem auto;
-	    min-height: calc(100vh - 100px); /* Adjust as needed */
-	padding: 2rem;
-	    background-color: #f0f0f0;
 }
 
 
@@ -304,7 +288,6 @@ footer {
     text-align: center;
     padding: 1rem 0;
 /* Ensure footer stays at the bottom */
-    margin-top: 0; /* Ensure no top margin */
     position: relative;
     bottom: 0;
     width: 100%;
