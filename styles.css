@@ -292,6 +292,7 @@ footer {
     text-align: center;
     padding: 1rem 0;
 /* Ensure footer stays at the bottom */
+    margin-top: 0; /* Ensure no top margin */
     position: relative;
     bottom: 0;
     width: 100%;
