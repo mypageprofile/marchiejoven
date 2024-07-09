@@ -36,7 +36,7 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px); /* Adds the glass blur effect */
     -webkit-backdrop-filter: blur(10px); /* For older versions of Safari */
-    font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
+	font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
     font-weight: bold; /* Make the font bold */
 }
 
@@ -88,7 +88,6 @@ main {
     max-width: 1300px;
     margin: 5rem auto;
 }
-
 
 section {
     padding-top: 60px; /* Adjust top padding */
