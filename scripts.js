@@ -49,3 +49,40 @@ document.addEventListener('mousemove', function(e) {
     const yOffset = -(e.clientY / window.innerHeight - 0.5) * 30; // Adjust the multiplier for intensity
     body.style.backgroundPosition = `${xOffset}px ${yOffset}px`;
 });
+
+// JavaScript for Check CV button
+function openCV() {
+    window.open('img/cv.pdf', '_blank');
+}
+
+// JaveScript for Progress Bar animation
+document.addEventListener('DOMContentLoaded', () => {
+    const skillsSection = document.getElementById('skills');
+    const progressBars = document.querySelectorAll('.progress');
+
+    const animateProgressBars = () => {
+        progressBars.forEach(progressBar => {
+            const percentage = progressBar.getAttribute('data-percentage');
+            progressBar.style.width = percentage + '%';
+            console.log(`Animating progress bar to ${percentage}%`); // Debug log
+        });
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log('Skills section is in view'); // Debug log
+                animateProgressBars();
+                observer.unobserve(skillsSection);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(skillsSection);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	// Initialize Web3Forms
+	const form = document.getElementById('contact-form');
+	new Web3Forms('your-form-id', form);
+});
