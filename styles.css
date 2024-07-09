@@ -1,3 +1,5 @@
+/* Normalize CSS for consistent styling across browsers */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 /* Add custom fonts from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -63,8 +65,6 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background on hover */
 }
 
-
-
 .justified-text {
     text-align: justify;
 }
@@ -85,15 +85,16 @@ nav ul li a:hover {
 }
 
 main {
-    max-width: 1100px;
-    margin: 3rem auto;
+    max-width: 1300px;
+    margin: 5rem auto;
 }
 
 section {
-    padding-top: 4rem; /* Adjust top padding */
-    padding-right: 3rem; /* Adjust right padding */
+    padding-top: 60px; /* Adjust top padding */
+    padding-right: 100px; /* Adjust right padding */
     padding-bottom: 2rem; /* Adjust bottom padding */
-    padding-left: 3rem; /* Adjust left padding */
+    padding-left: 100px; /* Adjust left padding */
+
     background: #fff;
     position: relative;
 }
@@ -119,34 +120,69 @@ section p {
     margin-top: 1rem;
 }
 
-#home {
-    text-align: center;
-    padding: 2rem;
-    background: #eaeaea;
-    border-radius: 8px;
+
+.home-container{
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
 }
 
-#home h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.home-container span{
+	display: block;
+}
+
+.text1{
+	font-family: 'Brush Script MT', cursive;
+	color:white;
+	font-size: 100px;
+	font-weight: 300;
+	letter-spacing: 8px;
+	margin-bottom: -50px;
+	background: transparent;
+	position: relative;
+	animation: text 3s 1;
+}
+.text2{
+	font-size:30px;
+	color: #cccccc;
+}
+
+@keyframes text{
+	0%{
+		color: #ccc;
+		margin-bottom: -80px;
+	}
+	30%{
+		letter-spacing: 25px;
+		margin-bottom: -80px;
+	}
+	85%{
+		letter-spacing: 8px;
+		margin-bottom: -80px;
+	}
 }
 
 #certificates h2 {
-    font-size: 2rem;
-    font-weight: 100;
+	font-size: 50px;
+	font-weight: 300;
+	letter-spacing: 5px;
     margin-bottom: 2rem;
 }
 
 #about h2 {
-    font-size: 2rem;
-    font-weight: 100;
+	font-size: 50px;
+	font-weight: 300;
+	letter-spacing: 5px;
     margin-bottom: 2rem;
 }
 
 #resume h2 {
-    font-size: 2rem;
-    font-weight: 100;
+	font-size: 50px;
+	font-weight: 300;
+	letter-spacing: 5px;
     margin-bottom: 3rem;
 }
 
@@ -155,14 +191,16 @@ section p {
 }
 
 #services h2 {
-    font-size: 2rem;
-    font-weight: 100;
+	font-size: 50px;
+	font-weight: 300;
+	letter-spacing: 5px;
     margin-bottom: 1rem;
 }
 
 #works h2 {
-    font-size: 2rem;
-    font-weight: 100;
+	font-size: 50px;
+	font-weight: 300;
+	letter-spacing: 5px;
     margin-bottom: 1rem;
 }
 
@@ -248,6 +286,10 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+/* Ensure footer stays at the bottom */
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -363,20 +405,19 @@ footer {
     background-color: #fff;
 }
 
+#empty4 {
+    background-color: transparent;
+    margin: 4rem;
+}
+
+#empty5 {
+    background-color: transparent;
+    margin: 2rem;
+}
+
+
 #home {
     background-color: transparent;
-}
-
-#home h1 {
-    font-size: 5rem;
-    font-weight: 700;
-    color: #eeeeee;
-}
-
-#home p {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #cccccc;
 }
 
 /* Center align h1 and social media links */
@@ -394,8 +435,9 @@ footer {
 }
 
 #contact h2 {
-    font-size: 2rem;
-    font-weight: bold;
+	font-size: 50px;
+	font-weight: 300;
+	letter-spacing: 8px;
     color: #333;
     margin-bottom: 1rem;
 }
@@ -428,7 +470,6 @@ footer {
 	font-size: 1rem;
     background-color: #333;
     color: #fff;
-
 	height: 8%;
 	width: 20%;
     border: none;
@@ -468,8 +509,9 @@ footer {
 
 #skills h2 {
     margin-bottom: 1rem; /* Adjust margin-bottom for spacing consistency */
-    font-size: 2rem; /* Match font size with other h2 headings */
-    font-weight: 100; /* Ensure consistent font weight */
+	font-size: 50px;
+	font-weight: 300;
+	letter-spacing: 8px;
     color: #333; /* Match text color with other h2 headings */
     position: relative;
 }
@@ -497,6 +539,7 @@ footer {
 .skill {
     flex: 0 1 45%;
     margin-bottom: 1.5rem;
+	    margin-left: 3rem;
     text-align: left;
 }
 
@@ -512,11 +555,19 @@ footer {
     display: flex;
     align-items: center;
     position: relative;
-    height: 2px;
+    height: 3px;
     background: #ccc;
-    width: 100%;
+    width: 90%;
     margin-top: 0.5rem;
 }
+
+.skill-line .progress {
+    background: #007BFF;
+    height: 100%;
+    width: 0; /* Start at 0 */
+    transition: width 2s ease-in-out; /* Smooth transition */
+}
+
 
 .progress {
     height: 2px;
@@ -525,7 +576,7 @@ footer {
 }
 
 .skill-line span {
-    margin-left: 28rem;
+    margin-left: 30rem;
 	margin-bottom: 0.8rem;
     font-size: 0.9rem;
     font-weight: bold;
@@ -542,15 +593,16 @@ footer {
 }
 
 #available h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
+	font-size: 100px;
+	font-weight: 300;
     color: #fff;
-    margin-bottom: -1.2rem;
+    margin-bottom: -50px;
+	font-family: 'Montserrat', sans-serif; /* Use Montserrat font */
 }
 
 #available p {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 30px;
+	font-weight: 300;
     color: #fff;
     margin-bottom: 1rem;
 }
@@ -568,6 +620,7 @@ footer {
     border-radius: 10px;
     cursor: pointer;
     transition: background 0.3s ease;
+	text-decoration: none;
 }
 
 .hire-me-button i {
@@ -611,4 +664,33 @@ footer {
 .toggle-button .button.active {
     background-color: #66BB6A; /* Active button color */
     color: white;
+}
+
+.button-container {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.btn {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+	text-decoration: none;
+	
+}
+
+.btn:hover {
+    background-color: #333;
+}
+
+.btn-icon {
+    margin-right: 8px;
 }
