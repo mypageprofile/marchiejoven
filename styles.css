@@ -36,6 +36,7 @@ body {
     position: relative;
     overflow-x: hidden;
     transition: background-color 0.3s ease;
+	min-height: 100vh;
 }
 
 body:hover {
@@ -99,7 +100,11 @@ nav ul li a:hover {
 main {
     max-width: 1300px;
     margin: 5rem auto;
+	    min-height: calc(100vh - 100px); /* Adjust as needed */
+	padding: 2rem;
+	    background-color: #f0f0f0;
 }
+
 
 section {
     padding-top: 60px; /* Adjust top padding */
