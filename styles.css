@@ -8,6 +8,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure full height of the viewport */
+}
+
 /* Basic reset and styling */
 body, h2, h3, p, ul, li, form, input, textarea, button {
     margin: 0;
