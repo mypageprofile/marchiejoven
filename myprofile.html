@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,39 +22,60 @@
             </ul>
         </nav>
     </header>
-
-    <main>
-        <section id="home">
-            <h1>Hey, I'm Marchie</h1>
-            <p>Discover my work and services</p>
+	<main> 
+		
+		<section id="empty4">
+            <h1></h1>
         </section>
-        
+		
+		<section id="home">
+		<div class="home-container">
+            <span class="text1">Hey, I'm Marchie</span>
+            <span class="text2">Discover my work and services</span>
+		</div>
+		</section>
+       
         <section id="empty">
             <h1></h1>
             <p></p>
         </section>
 
-        <section id="about">
-            <h2>More Info About Me</h2>
-            <div class="about-container">
-                <img src="img/profile.jpg" alt="Profile Image" class="profile-image">
-                <div class="about-text">
+		<section id="about">
+			<h2>More Info About Me</h2>
+			<div class="about-container">
+				<img src="img/profile.jpg" alt="Profile Image" class="profile-image">
+				<div class="about-text">
 					<br>
-                    <p class="justified-text">I'm Marchie L. Joven, 31 years old. A dedicated and driven professional, known for my strong work ethic and remarkable ability to work independently. With a strong preference for remote work, I thrive in environments where I can leverage my self-motivation and discipline to achieve exceptional results. Eager to embrace the flexibility of working from home, I seamlessly balance productivity and focus, often going above and beyond to meet and exceed expectations. My friendly demeanor makes me approachable and easy to collaborate with, while my serious and focused nature during work phases ensures tasks are completed efficiently and to the highest standard. Whether tackling complex projects or managing daily responsibilities, I consistently demonstrate a strong work ethic and a commitment to excellence, making me a valuable asset to any remote team.</p>
+					<p class="justified-text">I'm Marchie L. Joven, 31 years old. A dedicated and driven professional, known for my strong work ethic and remarkable ability to work independently. With a strong preference for remote work, I thrive in environments where I can leverage my self-motivation and discipline to achieve exceptional results. Eager to embrace the flexibility of working from home, I seamlessly balance productivity and focus, often going above and beyond to meet and exceed expectations. My friendly demeanor makes me approachable and easy to collaborate with, while my serious and focused nature during work phases ensures tasks are completed efficiently and to the highest standard. Whether tackling complex projects or managing daily responsibilities, I consistently demonstrate a strong work ethic and a commitment to excellence, making me a valuable asset to any remote team.</p>
 					<br>
 					<div class="personal-info">
 						<div class="info-left">
-							<p><i class="fas fa-user"></i>   Marchie L. Joven</p>
-							<p><i class="fas fa-envelope"></i>   marchiejoven@gmail.com</p>
+							<p><i class="fas fa-user"></i> Marchie L. Joven</p>
+							<p><i class="fas fa-envelope"></i> marchiejoven@gmail.com</p>
 						</div>
 						<div class="info-right">
-							<p><i class="fas fa-map-marker-alt"></i>   Davao City, Philippines</p>
-							<p><i class="fas fa-briefcase"></i>   Freelance</p>
+							<p><i class="fas fa-map-marker-alt"></i> Davao City, Philippines</p>
+							<p><i class="fas fa-briefcase"></i> Freelance</p>
 						</div>
 					</div>
+					 <div class="button-container">
+						<button class="btn" onclick="openCV()">
+							<i class="fas fa-file-alt btn-icon"></i>
+							Check CV
+						</button>
+						<a href="#works" class="btn">
+							<i class="fas fa-briefcase btn-icon"></i>
+							Works
+						</a>
+						<a href="#contact" class="btn">
+							<i class="fas fa-envelope btn-icon"></i>
+							Hire Me
+						</a>
+					</div>
 				</div>
-            </div>
-        </section>
+			</div>
+		</section>
+
 		
 		<section id="empty3">
             <h1></h1>
@@ -61,38 +83,39 @@
         </section>
 		
 		<section id="skills">
-		<h2>My Skills and Competencies</h2>
-		<div class="skills-container">
-			<div class="skill">
-				<h3>SQL</h3>
-				<div class="skill-line">
-					<div class="progress" style="width: 90%;"></div>
-					<span>90%</span>
+			<h2>My Skills and Competencies</h2>
+			<div class="skills-container">
+				<div class="skill">
+					<h3>Encoding</h3>
+					<div class="skill-line">
+						<div class="progress" data-percentage="90" style="width: 0;"></div>
+						<span>90%</span>
+					</div>
+				</div>
+				<div class="skill">
+					<h3>Email Management</h3>
+					<div class="skill-line">
+						<div class="progress" data-percentage="85" style="width: 0;"></div>
+						<span>85%</span>
+					</div>
+				</div>
+				<div class="skill">
+					<h3>Book Keeping</h3>
+					<div class="skill-line">
+						<div class="progress" data-percentage="80" style="width: 0;"></div>
+						<span>80%</span>
+					</div>
+				</div>
+				<div class="skill">
+					<h3>Communication</h3>
+					<div class="skill-line">
+						<div class="progress" data-percentage="75" style="width: 0;"></div>
+						<span>75%</span>
+					</div>
 				</div>
 			</div>
-			<div class="skill">
-				<h3>C#.NET</h3>
-				<div class="skill-line">
-					<div class="progress" style="width: 85%;"></div>
-					<span>85%</span>
-				</div>
-			</div>
-			<div class="skill">
-				<h3>HTML/CSS</h3>
-				<div class="skill-line">
-					<div class="progress" style="width: 80%;"></div>
-					<span>80%</span>
-				</div>
-			</div>
-			<div class="skill">
-				<h3>Application Administration</h3>
-				<div class="skill-line">
-					<div class="progress" style="width: 75%;"></div>
-					<span>75%</span>
-				</div>
-			</div>
-		</div>
 		</section>
+
 
         <section id="certificates">
             <h2>Certificates</h2>
@@ -115,7 +138,7 @@
             </div>
         </section>
 
-<section id="resume">
+	<section id="resume">
     <h2>My Experience and Education</h2>
     <div class="toggle-button" onclick="toggleSection()">
         <div id="experienceBtn" class="button active"><i class="fas fa-briefcase"></i> Experience</div>
@@ -135,7 +158,7 @@
         <p>Master's Degree in Information Technology from University B</p>
         <p>Certifications in Web Development and UX/UI Design</p>
     </div>
-</section>
+	</section>
 
 
 
@@ -170,18 +193,23 @@
 		<section id="available">
 			<h1>Let's Work Together!</h1>
 			<p>I am available for freelance projects.</p>
-			<button class="hire-me-button"><i class="fas fa-handshake"></i> Hire Me</button>
+			<a href="#contact" class="hire-me-button"><i class="fas fa-handshake"></i> Hire Me</a>
 		</section>
+		
+		<section id="empty5">
+            <h1></h1>
+        </section>
 
 		<section id="contact">
 			<h2>Get In Touch</h2>
-			<form>
+			<form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+				<input type="hidden" name="access_key" value="e6e94a93-6035-4757-ab37-feed1811784f">
 				<label for="name">Name:</label>
-				<input type="text" id="name" name="name" required>
+				<input type="text" id="name" placeholder="Your Name" class="contact-inputs" name="name" required>
 				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required>
+				<input type="email" id="email" placeholder="Your Email" class="contact-inputs" name="email" required>
 				<label for="message">Message:</label>
-				<textarea id="message" name="message" required></textarea>
+				<textarea id="message" placeholder="Your Message" class="contact-inputs" name="message" required></textarea>
 				<button type="submit">Send</button>
 			</form>
 			<p><br></p>
