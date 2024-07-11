@@ -109,14 +109,14 @@ const result = document.getElementById('result');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const formData = new FormData(form); // Corrected to use 'form' instead of 'contact-form'
+    const formData = new FormData(form);
     const object = {};
     formData.forEach((value, key) => {
         object[key] = value;
     });
     const json = JSON.stringify(object);
 
-    result.innerHTML = "Please wait...";
+    result.textContent = "Please wait...";
 
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -129,22 +129,27 @@ form.addEventListener('submit', function(e) {
     .then(async (response) => {
         const jsonResponse = await response.json();
         if (response.ok) {
-            result.innerHTML = "Form submitted successfully";
+            result.textContent = "Form submitted successfully";
+            // Redirect to home section after successful form submission
+            setTimeout(() => {
+                window.location.href = '#home'; // Redirect to the home section
+            }, 2000); // Redirect after 2 seconds (adjust delay as needed)
         } else {
             console.log(response);
-            result.innerHTML = jsonResponse.message || "Failed to submit form";
+            result.textContent = jsonResponse.message || "Failed to submit form";
         }
     })
     .catch(error => {
         console.error('Error:', error);
-        result.innerHTML = "Something went wrong!";
+        result.textContent = "Something went wrong!";
     })
     .finally(() => {
         form.reset();
         setTimeout(() => {
-            result.innerHTML = ""; // Clear result message
+            result.textContent = ""; // Clear result message
         }, 3000);
     });
 });
+
 
 
