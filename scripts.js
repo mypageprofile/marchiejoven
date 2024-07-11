@@ -104,73 +104,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // FOR SEND BUTTON PROCESS
-const form = document.getElementById('contact-form');
-const result = document.getElementById('result');
-const homeSection = document.getElementById('home'); // Replace 'home' with the ID of your home section
+    const form = document.getElementById('contact-form');
+    const result = document.getElementById('result');
+    const homeSection = document.getElementById('home'); // Replace 'home' with the ID of your home section
 
-// Hide result element initially
-result.style.display = 'none';
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
+        const formData = new FormData(form);
+        const object = {};
+        formData.forEach((value, key) => {
+            object[key] = value;
+        });
+        const json = JSON.stringify(object);
 
-    const formData = new FormData(form);
-    const object = {};
-    formData.forEach((value, key) => {
-        object[key] = value;
-    });
-    const json = JSON.stringify(object);
+        result.textContent = "Please wait...";
+        result.style.display = 'block'; // Show the result element with "Please wait..." message
 
-    result.textContent = "Please wait...";
-    result.style.display = 'block'; // Show result element with "Please wait..." message
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            const jsonResponse = await response.json();
+            if (response.ok) {
+                // Optional: Perform any actions upon successful submission
+                form.reset(); // Clear form inputs after submission
 
-    fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: json
-    })
-    .then(async (response) => {
-        const jsonResponse = await response.json();
-        if (response.ok) {
-            // Delay showing success message to match the wait message
-            setTimeout(() => {
-                result.textContent = ""; // Clear any message
-                result.style.display = 'none'; // Hide the result element
-                // Show success message and redirect after delay
-                result.style.display = 'block';
+                // Redirect to home section after successful form submission
                 setTimeout(() => {
-                    // Scroll to home section
                     homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Adjusting window location to home section to ensure proper visibility
-                    if (!window.location.hash || window.location.hash !== '#home') {
-                        window.location.hash = '#home'; // Redirect to the home section
-                    }
-                    result.style.display = 'none'; // Hide the result element after redirect
-                }, 2000); // Redirect after 2 seconds (adjust delay as needed)
-            }, 2000); // Delay matching the wait message
-        } else {
-            console.log(response);
-            result.textContent = jsonResponse.message || "Failed to submit form";
-            result.style.display = 'block'; // Show result element with error message
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        result.textContent = "Something went wrong!";
-        result.style.display = 'block'; // Show result element with error message
-    })
-    .finally(() => {
-        form.reset();
-        setTimeout(() => {
-            result.style.display = 'none'; // Hide the result element after delay
-            result.textContent = ""; // Clear result message
-        }, 3000); // Hide result message after 3 seconds (adjust delay as needed)
+                }, 1000); // Scroll to home section after 1 second (adjust delay as needed)
+            } else {
+                console.log(response);
+                result.textContent = jsonResponse.message || "Failed to submit form";
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            result.textContent = "Something went wrong!";
+        })
+        .finally(() => {
+            setTimeout(() => {
+                result.style.display = 'none'; // Hide the result element after delay
+                result.textContent = ""; // Clear result message
+            }, 3000); // Hide result message after 3 seconds (adjust delay as needed)
+        });
     });
-});
-
 
 
 
