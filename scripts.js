@@ -103,39 +103,48 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Web3Forms
-    const form = document.getElementById('contact-form');
-    new Web3Forms('your-form-id', form);
+const form = document.getElementById('contact-form');
+const result = document.getElementById('result');
 
-    // Add event listener for form submission
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-        // Send form data using Fetch API
-        fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            body: new FormData(this)
-        }).then(response => {
-            if (response.ok) {
-                // Redirect to the success page of Web3Forms
-                window.location.href = 'https://web3forms.com/success';
-            } else {
-                // Handle errors if needed
-                alert('There was an error submitting the form. Please try again.');
-            }
-        }).catch(error => {
-            console.error('Error:', error);
-        });
+    const formData = new FormData(form); // Corrected to use 'form' instead of 'contact-form'
+    const object = {};
+    formData.forEach((value, key) => {
+        object[key] = value;
     });
+    const json = JSON.stringify(object);
 
-    // Check if returning from Web3Forms success page
-    if (window.location.href === 'https://web3forms.com/success') {
-        // Redirect to home page after a short delay (adjust as needed)
+    result.innerHTML = "Please wait...";
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        const jsonResponse = await response.json();
+        if (response.ok) {
+            result.innerHTML = "Form submitted successfully";
+        } else {
+            console.log(response);
+            result.innerHTML = jsonResponse.message || "Failed to submit form";
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        result.innerHTML = "Something went wrong!";
+    })
+    .finally(() => {
+        form.reset();
         setTimeout(() => {
-            window.location.href = '#home'; // Replace with your actual home page URL
-        }, 2000); // Redirect after 2 seconds (adjust delay as needed)
-    }
+            result.innerHTML = ""; // Clear result message
+        }, 3000);
+    });
 });
 
 
