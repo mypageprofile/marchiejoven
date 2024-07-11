@@ -122,6 +122,7 @@ form.addEventListener('submit', function(e) {
     const json = JSON.stringify(object);
 
     result.textContent = "Please wait...";
+    result.style.display = 'block'; // Show result element with "Please wait..." message
 
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -134,40 +135,42 @@ form.addEventListener('submit', function(e) {
     .then(async (response) => {
         const jsonResponse = await response.json();
         if (response.ok) {
-            result.textContent = "Form submitted successfully";
-            // Show result element
-            result.style.display = 'block';
-            // Redirect to home section after successful form submission
+            // Delay showing success message to match the wait message
             setTimeout(() => {
-                // Scroll to home section
-                homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                // Adjusting window location to home section to ensure proper visibility
-                if (!window.location.hash || window.location.hash !== '#home') {
-                    window.location.hash = '#home'; // Redirect to the home section
-                }
-            }, 2000); // Redirect after 2 seconds (adjust delay as needed)
+                result.textContent = ""; // Clear any message
+                result.style.display = 'none'; // Hide the result element
+                // Show success message and redirect after delay
+                result.style.display = 'block';
+                setTimeout(() => {
+                    // Scroll to home section
+                    homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Adjusting window location to home section to ensure proper visibility
+                    if (!window.location.hash || window.location.hash !== '#home') {
+                        window.location.hash = '#home'; // Redirect to the home section
+                    }
+                    result.style.display = 'none'; // Hide the result element after redirect
+                }, 2000); // Redirect after 2 seconds (adjust delay as needed)
+            }, 2000); // Delay matching the wait message
         } else {
             console.log(response);
             result.textContent = jsonResponse.message || "Failed to submit form";
-            // Show result element
-            result.style.display = 'block';
+            result.style.display = 'block'; // Show result element with error message
         }
     })
     .catch(error => {
         console.error('Error:', error);
         result.textContent = "Something went wrong!";
-        // Show result element
-        result.style.display = 'block';
+        result.style.display = 'block'; // Show result element with error message
     })
     .finally(() => {
         form.reset();
         setTimeout(() => {
-            // Hide result element after delay
-            result.style.display = 'none';
+            result.style.display = 'none'; // Hide the result element after delay
             result.textContent = ""; // Clear result message
-        }, 3000);
+        }, 3000); // Hide result message after 3 seconds (adjust delay as needed)
     });
 });
+
 
 
 
