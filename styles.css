@@ -308,6 +308,13 @@ form button:hover {
     background: #555;
 }
 
+footer::part(inner-footer) {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
 footer {
     background: #333;
     color: #fff;
