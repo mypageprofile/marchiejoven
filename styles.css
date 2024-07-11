@@ -314,9 +314,10 @@ footer {
     text-align: center;
     padding: 1rem 0;
     /* Ensure footer stays at the bottom */
-    position: relative;
+    position: fixed; /* Change to fixed position */
     bottom: 0;
     width: 100%;
+    z-index: 100; /* Adjust z-index as needed */
 }
 
 @media (max-width: 768px) {
