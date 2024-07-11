@@ -9,20 +9,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home"> Home</a></li>
-                <li><a href="#about"> About</a></li>
-                <li><a href="#certificates"> Certificates</a></li>
-                <li><a href="#resume"> Resume</a></li>
-                <li><a href="#services"> Services</a></li>
-                <li><a href="#works"> Works</a></li>
-                <li><a href="#contact"> Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-	<main> 
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#home"> Home</a></li>
+					<li><a href="#about"> About</a></li>
+					<li><a href="#certificates"> Certificates</a></li>
+					<li><a href="#resume"> Resume</a></li>
+					<li><a href="#services"> Services</a></li>
+					<li><a href="#works"> Works</a></li>
+					<li><a href="#contact"> Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main id="main"> 
 		
 		<section id="empty4">
             <h1></h1>
@@ -58,19 +58,19 @@
 							<p><i class="fas fa-briefcase"></i> Freelance</p>
 						</div>
 					</div>
-					 <div class="button-container">
+					<div class="button-container">
 						<button class="btn" onclick="openCV()">
 							<i class="fas fa-file-alt btn-icon"></i>
 							Check CV
 						</button>
-						<a href="#works" class="btn">
+						<button class="btn" onclick="location.href='#works'">
 							<i class="fas fa-briefcase btn-icon"></i>
 							Works
-						</a>
-						<a href="#contact" class="btn">
+						</button>
+						<button class="btn" onclick="location.href='#contact'">
 							<i class="fas fa-envelope btn-icon"></i>
 							Hire Me
-						</a>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -113,6 +113,20 @@
 						<span>75%</span>
 					</div>
 				</div>
+				<div class="skill">
+					<h3>Flexibility</h3>
+					<div class="skill-line">
+						<div class="progress" data-percentage="75" style="width: 0;"></div>
+						<span>75%</span>
+					</div>
+				</div>
+				<div class="skill">
+					<h3>Team Collaboration</h3>
+					<div class="skill-line">
+						<div class="progress" data-percentage="80" style="width: 0;"></div>
+						<span>80%</span>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -137,29 +151,107 @@
                 </div>
             </div>
         </section>
+		
 
-	<section id="resume">
-    <h2>My Experience and Education</h2>
-    <div class="toggle-button" onclick="toggleSection()">
-        <div id="experienceBtn" class="button active"><i class="fas fa-briefcase"></i> Experience</div>
-        <div id="educationBtn" class="button"><i class="fas fa-graduation-cap"></i> Education</div>
-    </div>
-    <div id="experience" class="resume-content">
-        <h3><i class="fas fa-briefcase"></i></h3>
-        <p>Details about your work experience...</p>
-        <p>Job 1: Front-end Developer at XYZ Corp</p>
-        <p>Job 2: Web Developer at ABC Inc</p>
-        <p>Job 3: Software Engineer at DEF Ltd</p>
-    </div>
-    <div id="education" class="resume-content" style="display: none;">
-        <h3><i class="fas fa-graduation-cap"></i></h3>
-        <p>Details about your education...</p>
-        <p>Bachelor's Degree in Computer Science from University A</p>
-        <p>Master's Degree in Information Technology from University B</p>
-        <p>Certifications in Web Development and UX/UI Design</p>
-    </div>
-	</section>
+		<section id="resume">
+		<h2>My Experience and Education</h2>
+		<div class="toggle-button">
+			<div id="experienceBtn" class="button active" onclick="toggleSection('experience')"><i class="fas fa-briefcase"></i> Experience</div>
+			<div id="educationBtn" class="button" onclick="toggleSection('education')"><i class="fas fa-graduation-cap"></i> Education</div>
+		</div>
+		
+		<div id="experience" class="resume-content">
+			<h3><i class="fas fa-briefcase"></i></h3>
+			<div class="timeline">
+				<div class="timeline-item">
+					<div class="timeline-icon"><span class="date">2015 - Present</span></div>
+					<div class="timeline-content">
+						<h4>Davao Golden Hardware, Inc.<br> <span>Invoicing Staff/Accounting Staff</span></h4>
+						<p><br>
+							<ul>
+								<li>Carefully reviewed each invoice and requisition for payments, resolving errors prior to processing.</li>
+								<li>Processed invoice payments and recorded information in the account database.</li>
+								<li>Coordinated workflows and delegated tasks for bill checking, posting and credit note processes.</li>
+								<li>Prepared month-end closing entries for detailed reporting and record keeping.</li>
+								<li>Gather banking transactions and recorded activity in Excel format to maintain consistent documentation.</li>
+								<li>Contributed to the integration of new accounting software, enhancing overall efficiency.</li>
+								<li>Supported internal and external audit processes, providing necessary documentation and explanations.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="timeline-icon"><span class="date">2015 - 2015</span></div>
+					<div class="timeline-content">
+						<h4>Marcafil Enterprises<br> <span>Personal Secretary</span></h4>
+						<p><br>
+							<ul>
+								<li>Generated and distributed invoices to obtain fee payments.</li>
+								<li>Answered inbound telephone calls promptly, directing clients, vendors and general queries to relevant teams.</li>
+								<li>Maintained and organised filling system documenting business operations.</li>
+								<li>Created accurate reports using Microsoft Excel spreadsheets.</li>
+								<li>Gathered banking transaction and recorded activity in Excel format to maintain consistent documentation.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+				<div class="timeline-item">
+					<div class="timeline-icon"><span class="date">2012 - 2015</span></div>
+					<div class="timeline-content">
+						<h4>Innovista Technologies Inc.<br> <span>RMA Officer/Technical Support</span></h4>
+						<p><br>
+							<ul>
+								<li>Service coordinator backup for laptop, qouting, and parts shipping.</li>
+								<li>Assist customers regarding concerns from: defective parts, exchanges, late or lost deliveries, invoicing errors, repairs, missing items, parts damaged during transit, address changes, credits, problems with customs etc.</li>
+								<li>Answered mailed, emailed, telephoned and in-person requests for service and information.</li>
+								<li>Handling customer problems both internally and externally.</li>
+								<li>Managed smooth operations and communicated timely updates to coordinate administrative activities.</li>
+								<li>Creating and updating documentation for common technical issues and solutions.</li>
+								<li>Building and maintaining a knowledge base for internal and external use.</li>
+							</ul>	
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 
+		
+		<div id="education" class="resume-content" style="display: none;">
+			<h3><i class="fas fa-graduation-cap"></i></h3>
+			<div class="timeline">
+				<div class="timeline-item">
+					<div class="timeline-icon"><span class="date">2009 - 2011</span></div>
+						<div class="timeline-content">
+							<h4>IT/Software Development
+							<span>AMA Computer Learning Center</span>
+							</h4>
+							<p><br></p>
+						</div>
+				</div>
+				
+				<div class="timeline-item">
+					<div class="timeline-icon"><span class="date">2006 - 2009</span></div>
+						<div class="timeline-content">
+							<h4>Davao City National High School
+							<span>Davao City National High School</span>
+							</h4>
+							<p></p>
+						</div>
+				</div>
+				
+				<div class="timeline-item">
+					<div class="timeline-icon"><span class="date">2001 - 2006</span></div>
+						<div class="timeline-content">
+							<h4>Teodor Palma Gil Elementary School
+							<span>Teodor Palma Gil Elementary School</span>
+							</h4>
+							<p></p>
+						</div>
+				</div>
+			</div>
+		</div>
+		
+		</section>
 
 
         <section id="services">
@@ -167,23 +259,40 @@
             <div class="project">
                 <img src="img\book.jpeg" alt="Project 1" class="responsive-image">
                 <h3>Book Keeping</h3>
-                <p>A brief description of the project...</p>
+                <p>A bookkeeping project involves organizing and maintaining financial records for a business or organization. 
+				It typically includes tasks such as recording transactions, reconciling accounts, managing payroll, 
+				tracking expenses, and generating financial reports. The primary goal is to ensure accurate financial records 
+				that support informed decision-making and compliance with regulatory requirements. Modern bookkeeping often utilizes 
+				software tools to streamline processes and improve accuracy, ensuring financial transparency and efficiency within 
+				the organization.<p><br></p>
+				</p>
             </div>
             <div class="project">
                 <img src="img\data.jpg" class="responsive-image">
                 <h3>Data Entry</h3>
-                <p>A brief description of the project...</p>
+                <p>A data entry project involves accurately inputting and updating various types of information into digital databases 
+				or systems. It includes tasks such as typing text, entering numerical data, updating records, and ensuring data integrity 
+				and accuracy. Data entry projects are crucial for maintaining organized and accessible information within an organization, 
+				supporting efficient operations and decision-making processes. Often, these projects require attention to detail, speed, 
+				and adherence to specific guidelines or formats provided. Advanced data entry projects may also involve data cleaning, 
+				verification, and basic analysis to enhance data quality and usability.</p>
+				<p><br></p>
             </div>
             <div class="project">
                 <img src="img\digital.jpg" class="responsive-image">
                 <h3>Digital Marketing</h3>
-                <p>A brief description of the project...</p>
+                <p>A digital marketing project focuses on promoting products, services, or brands using digital channels and technologies. 
+				It includes strategies and activities aimed at reaching and engaging target audiences online. Digital marketing projects 
+				require a blend of creativity, technical skills, and analytical thinking to effectively leverage digital channels and achieve 
+				marketing objectives in a competitive online landscape.<p><br></p>
+				</p>
             </div>
         </section>
 
         <section id="works">
             <h2>Works</h2>
-            <p>I am a passionate developer with experience in creating responsive and user-friendly websites.</p>
+            <p>I am dedicated to working hard to improve my life and provide for my family. I approach challenges with seriousness and eagerness, 
+			always striving to become more productive. My commitment stems from a desire to achieve personal and professional growth.</p>
         </section>
 		
 		<section id="empty2">
@@ -210,7 +319,7 @@
 				<input type="email" id="email" placeholder="Your Email" class="contact-inputs" name="email" required>
 				<label for="message">Message:</label>
 				<textarea id="message" placeholder="Your Message" class="contact-inputs" name="message" required></textarea>
-				<button type="submit">Send</button>
+				<button type="submit"><i class="fas fa-paper-plane btn-icon"></i>Send</button>
 			</form>
 			<p><br></p>
 			<div class="social-media">
