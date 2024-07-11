@@ -92,6 +92,33 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Web3Forms
+    const form = document.getElementById('contact-form');
+    new Web3Forms('your-form-id', form);
+
+    // Add event listener for form submission
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Send form data using Fetch API
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: new FormData(this)
+        }).then(response => {
+            if (response.ok) {
+                // Redirect to home section after successful submission
+                window.location.href = '#home';
+            } else {
+                // Handle errors if needed
+                alert('There was an error submitting the form. Please try again.');
+            }
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    });
+});
+
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -103,10 +130,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// FOR SEND BUTTON PROCESS
+
+
+
     const form = document.getElementById('contact-form');
     const result = document.getElementById('result');
-    const homeSection = document.getElementById('home'); // Replace 'home' with the ID of your home section
+    const homeSection = document.getElementById('empty4'); // Replace 'home' with the ID of your home section
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -118,8 +147,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
         const json = JSON.stringify(object);
 
-        // Display the result element
-        result.style.display = 'block';
+    result.textContent = "";
+    result.style.display = 'block'; // Show result element with "Please wait..." message
 
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
