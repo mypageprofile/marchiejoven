@@ -20,26 +20,37 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function toggleSection() {
+function toggleSection(section) {
     var experienceBtn = document.getElementById('experienceBtn');
     var educationBtn = document.getElementById('educationBtn');
     var experience = document.getElementById('experience');
     var education = document.getElementById('education');
 
-    if (education.style.display === 'block') {
-        experience.style.display = 'block';
-        education.style.display = 'none';
-        experienceBtn.classList.add('active');
-        educationBtn.classList.remove('active');
-    } else {
+    if (section === 'education') {
+        // Show education section, hide experience section
         experience.style.display = 'none';
         education.style.display = 'block';
         experienceBtn.classList.remove('active');
         educationBtn.classList.add('active');
+    } else {
+        // Show experience section, hide education section
+        experience.style.display = 'block';
+        education.style.display = 'none';
+        experienceBtn.classList.add('active');
+        educationBtn.classList.remove('active');
     }
 }
 
-
+function scrollToElement(elementId) {
+    var element = document.getElementById(elementId);
+    if (element) {
+        var offset = element.offsetTop - (window.innerHeight / 2);
+        window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+        });
+    }
+}
 
 
 // JavaScript for parallax background effect
@@ -80,45 +91,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(skillsSection);
 });
-/*
+
 document.addEventListener('DOMContentLoaded', () => {
-	// Initialize Web3Forms
-	const form = document.getElementById('contact-form');
-	new Web3Forms('your-form-id', form);
-});
-*/
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contact-form');
+    // Initialize Web3Forms
+    const form = document.getElementById('contact-form');
+    new Web3Forms('your-form-id', form);
 
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting traditionally
+    // Add event listener for form submission
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
 
-        const formData = new FormData(contactForm);
-        const formDataObject = {};
-        formData.forEach((value, key) => {
-            formDataObject[key] = value;
-        });
-
+        // Send form data using Fetch API
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            body: JSON.stringify(formDataObject),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Message sent successfully!'); // Replace with your preferred success message method
-                contactForm.reset(); // Optional: Clear the form fields
-                window.location.href = '/'; // Redirect to the home page
+            body: new FormData(this)
+        }).then(response => {
+            if (response.ok) {
+                // Redirect to home section after successful submission
+                window.location.href = '#home';
             } else {
-                throw new Error('Failed to send message.');
+                // Handle errors if needed
+                alert('There was an error submitting the form. Please try again.');
             }
-        })
-        .catch(error => {
+        }).catch(error => {
             console.error('Error:', error);
-            alert('There was a problem sending your message. Please try again later.');
+        });
+    });
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
     });
 });
