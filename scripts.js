@@ -118,8 +118,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
         const json = JSON.stringify(object);
 
-        result.textContent = "Please wait...";
-        result.style.display = 'block'; // Show the result element with "Please wait..." message
+        // Display the result element
+        result.style.display = 'block';
 
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
@@ -149,14 +149,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             result.textContent = "Something went wrong!";
         })
         .finally(() => {
+            // Hide the result element after delay
             setTimeout(() => {
-                result.style.display = 'none'; // Hide the result element after delay
-                result.textContent = ""; // Clear result message
+                result.style.display = 'none';
+                // Clear result message
+                result.textContent = "";
             }, 3000); // Hide result message after 3 seconds (adjust delay as needed)
         });
     });
-
-
 
 
 
