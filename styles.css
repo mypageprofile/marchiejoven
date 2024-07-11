@@ -419,7 +419,7 @@ footer {
 }
 
 .profile-image {
-    width: 300px; /* Adjust the size as needed */
+    width: 350px; /* Adjust the size as needed */
     height: 600px; /* Adjust the size as needed */
     border-radius: 2%; /* Makes the image circular */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
