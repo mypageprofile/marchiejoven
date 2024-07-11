@@ -880,4 +880,8 @@ body {
     list-style-type: square;
 }
 
+#result {
+	display: none; /* Hide the result div by default */
+}
+
 
