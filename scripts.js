@@ -103,6 +103,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// FOR SEND BUTTON PROCESS
 const form = document.getElementById('contact-form');
 const result = document.getElementById('result');
 const homeSection = document.getElementById('home'); // Replace 'home' with the ID of your home section
@@ -138,8 +139,12 @@ form.addEventListener('submit', function(e) {
             result.style.display = 'block';
             // Redirect to home section after successful form submission
             setTimeout(() => {
+                // Scroll to home section
                 homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                window.location.href = '#home'; // Redirect to the home section
+                // Adjusting window location to home section to ensure proper visibility
+                if (!window.location.hash || window.location.hash !== '#home') {
+                    window.location.hash = '#home'; // Redirect to the home section
+                }
             }, 2000); // Redirect after 2 seconds (adjust delay as needed)
         } else {
             console.log(response);
@@ -163,6 +168,7 @@ form.addEventListener('submit', function(e) {
         }, 3000);
     });
 });
+
 
 
 
