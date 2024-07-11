@@ -92,6 +92,17 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(skillsSection);
 });
 
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Web3Forms
     const form = document.getElementById('contact-form');
@@ -107,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
             body: new FormData(this)
         }).then(response => {
             if (response.ok) {
-                // Redirect to home section after successful submission
-                window.location.href = '#home';
+                // Redirect to the success page of Web3Forms
+                window.location.href = 'https://web3forms.com/success';
             } else {
                 // Handle errors if needed
                 alert('There was an error submitting the form. Please try again.');
@@ -117,16 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error:', error);
         });
     });
+
+    // Check if returning from Web3Forms success page
+    if (window.location.href === 'https://web3forms.com/success') {
+        // Redirect to home page after a short delay (adjust as needed)
+        setTimeout(() => {
+            window.location.href = '#home'; // Replace with your actual home page URL
+        }, 2000); // Redirect after 2 seconds (adjust delay as needed)
+    }
 });
 
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
 
