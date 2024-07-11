@@ -105,6 +105,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 const form = document.getElementById('contact-form');
 const result = document.getElementById('result');
+const homeSection = document.getElementById('home'); // Replace 'home' with the ID of your home section
+
+// Hide result element initially
+result.style.display = 'none';
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -130,26 +134,36 @@ form.addEventListener('submit', function(e) {
         const jsonResponse = await response.json();
         if (response.ok) {
             result.textContent = "Form submitted successfully";
+            // Show result element
+            result.style.display = 'block';
             // Redirect to home section after successful form submission
             setTimeout(() => {
+                homeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 window.location.href = '#home'; // Redirect to the home section
             }, 2000); // Redirect after 2 seconds (adjust delay as needed)
         } else {
             console.log(response);
             result.textContent = jsonResponse.message || "Failed to submit form";
+            // Show result element
+            result.style.display = 'block';
         }
     })
     .catch(error => {
         console.error('Error:', error);
         result.textContent = "Something went wrong!";
+        // Show result element
+        result.style.display = 'block';
     })
     .finally(() => {
         form.reset();
         setTimeout(() => {
+            // Hide result element after delay
+            result.style.display = 'none';
             result.textContent = ""; // Clear result message
         }, 3000);
     });
 });
+
 
 
 
