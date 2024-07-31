@@ -308,33 +308,15 @@ form button:hover {
     background: #555;
 }
 
-footer::part(inner-footer) .loov-companion-mv3 {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-footer::part(inner-footer) {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 10vh; /* Example height using viewport height */
-}
-
 footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
     /* Ensure footer stays at the bottom */
-    display: none; /* Initially hidden */
-    position: fixed; /* Change to fixed position */
+    position: relative;
     bottom: 0;
     width: 100%;
-    z-index: 100; /* Adjust z-index as needed */
 }
 
 @media (max-width: 768px) {
@@ -420,7 +402,7 @@ footer {
 }
 
 .profile-image {
-    width: 350px; /* Adjust the size as needed */
+    width: 300px; /* Adjust the size as needed */
     height: 600px; /* Adjust the size as needed */
     border-radius: 2%; /* Makes the image circular */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -898,8 +880,7 @@ body {
     list-style-type: square;
 }
 
+
 #result {
 	display: none; /* Hide the result div by default */
 }
-
-
