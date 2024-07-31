@@ -147,8 +147,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
         const json = JSON.stringify(object);
 
-    result.textContent = "";
-    result.style.display = 'block'; // Show result element with "Please wait..." message
+		result.textContent = "";
+		result.style.display = 'block'; // Show result element with "Please wait..." message
 
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
